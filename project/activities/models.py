@@ -10,3 +10,14 @@ class ActivityType(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ParticipantRole(models.Model):
+    """
+    The role of a person who participates in an activity.
+    """
+
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
