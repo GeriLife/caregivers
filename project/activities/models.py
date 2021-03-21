@@ -21,3 +21,14 @@ class ParticipantRole(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Activity(models.Model):
+    """
+    Represents an activity conducted by a person.
+    """
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    activity_type = models.ForeignKey(to=ActivityType, on_delete=models.PROTECT)
+    participant_role = models.ForeignKey(to=ParticipantRole, on_delete=models.PROTECT)
+    
