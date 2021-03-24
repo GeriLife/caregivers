@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Activities list</h1>
+
+    <table>
+        <tr>
+            <th>
+                Participant role
+            </th>
+            <th>
+                Activity type
+            </th>
+            <th>
+                Start
+            </th>
+            <th>
+                end
+            </th>
+        </tr>
+        {% for activity in activities %}
+            <tr>
+                <td>
+                    {{ activity.participant_role }}
+                </td>
+                <td>
+                    {{ activity.activity_type }}
+                </td>
+                <td>
+                    {{ activity.start }}
+                </td>
+                <td>
+                    {{ activity.end }}
+                </td>
+            </tr>
+            
+        {% endfor %}
+    </table>
+    
+{% endblock content %}

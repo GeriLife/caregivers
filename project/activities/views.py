@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.views.generic.base import TemplateView
+from django.views.generic import ListView
 
+from .models import Activity
 
-class IndexView(TemplateView):
-    template_name = "activities/activities_index.html"
+class ActivitiesListView(ListView):
+    model = Activity
+    context_object_name = "activities"
+    template_name = "activities/activities_list.html"
