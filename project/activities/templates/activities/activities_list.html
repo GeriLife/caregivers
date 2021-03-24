@@ -3,38 +3,42 @@
 {% block content %}
     <h1>Activities list</h1>
 
-    <table>
-        <tr>
-            <th>
-                Participant role
-            </th>
-            <th>
-                Activity type
-            </th>
-            <th>
-                Start
-            </th>
-            <th>
-                end
-            </th>
-        </tr>
-        {% for activity in activities %}
-            <tr>
-                <td>
-                    {{ activity.participant_role }}
-                </td>
-                <td>
-                    {{ activity.activity_type }}
-                </td>
-                <td>
-                    {{ activity.start }}
-                </td>
-                <td>
-                    {{ activity.end }}
-                </td>
+    <table class="mdc-data-table__table">
+        <thead>
+            <tr class="mdc-data-table__header-row">
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                    Participant role
+                </th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                    Activity type
+                </th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                    Start
+                </th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">
+                    end
+                </th>
             </tr>
-            
-        {% endfor %}
+        </thead>
+
+        <tbody class="mdc-data-table__content">
+            {% for activity in activities %}
+                <tr class="mdc-data-table__row">
+                    <td class="mdc-data-table__cell" scope="row">
+                        {{ activity.participant_role }}
+                    </td>
+                    <td class="mdc-data-table__cell" scope="row">
+                        {{ activity.activity_type }}
+                    </td>
+                    <td class="mdc-data-table__cell" scope="row">
+                        {{ activity.start }}
+                    </td>
+                    <td class="mdc-data-table__cell" scope="row">
+                        {{ activity.end }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
     
 {% endblock content %}
